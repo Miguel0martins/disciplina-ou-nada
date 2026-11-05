@@ -1,5 +1,7 @@
 package br.com.miguel.disciplina_ou_nada;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
         GerenciadorTarefas gerenciador = new GerenciadorTarefas();
@@ -8,13 +10,16 @@ public class Main {
         gerenciador.adicionar(
                 "Entregar relatório",
                 "Finalizar métricas financeiras do mês",
-                "10/11/2026"
+                LocalDate.of(2026, 11, 10)
         );
         gerenciador.adicionar(
                 "Estudar Java",
                 "Praticar Programação Orientada a Objetos",
-                "Amanhã"
+                LocalDate.of(2026, 11, 10)
         );
+
+        gerenciador.adicionar("Teste atrasada", "Tarefa de teste", LocalDate.now().minusDays(1));
+        System.out.println(gerenciador.getTarefas().get(2).estaAtrasada());
 
         // Listando todas
         gerenciador.listar();
