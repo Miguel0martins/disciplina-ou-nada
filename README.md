@@ -13,10 +13,15 @@ Gerenciador de tarefas em Java com Spring Boot que cobra a disciplina de quem de
 - Java 17
 - Spring Boot
 - Maven
-
+- Spring Data JPA
+- H2 (banco em arquivo)
 ## Como rodar
 
     ./mvnw spring-boot:run
+
+| PUT | /tarefas/{id}/concluir | Marca a tarefa como concluída (404 se não existir) |
+| DELETE | /tarefas/{id} | Remove a tarefa (404 se não existir) |
+
 ## Rotas da API
 
 | Método | Rota | O que faz |
@@ -28,9 +33,11 @@ Gerenciador de tarefas em Java com Spring Boot que cobra a disciplina de quem de
 | PUT | /tarefas/{indice}/concluir | Marca a tarefa como concluída |
 | DELETE | /tarefas/{indice} | Remove a tarefa |
 
+
+
 ## Status do projeto
 
-Em desenvolvimento. Próximos passos: transformar em API REST, salvar tarefas no banco e adicionar a cobrança de disciplina com mensagens e análise de sentimento.
+Versão 1 pronta: API REST com banco de dados. Próximo passo: análise de sentimento com IA.
 
 ## Sobre o projeto
 
