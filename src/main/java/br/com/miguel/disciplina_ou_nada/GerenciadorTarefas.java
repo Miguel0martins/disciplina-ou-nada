@@ -21,6 +21,16 @@ public class GerenciadorTarefas {
         return tarefas;
     }
 
+    public List<Tarefa> getAtrasadas() {
+        List<Tarefa> atrasadas = new ArrayList<>();
+        for (Tarefa t : tarefas) {
+            if (t.estaAtrasada()) {
+                atrasadas.add(t);
+            }
+        }
+        return atrasadas;
+    }
+
     public void listar() {
         if (tarefas.isEmpty()) {
             System.out.println("Nenhuma tarefa cadastrada.");
