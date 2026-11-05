@@ -1,12 +1,29 @@
 package br.com.miguel.disciplina_ou_nada;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.time.LocalDate;
 
+@Entity
 public class Tarefa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String titulo;
     private String descricao;
     private LocalDate prazo;
     private boolean concluida;
+
+    public Tarefa() {
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     public Tarefa(String titulo, String descricao, LocalDate prazo) {
         this.titulo = titulo;
@@ -20,17 +37,37 @@ public class Tarefa {
     }
 
     // Getters e Setters
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public String getTitulo() {
+        return titulo;
+    }
 
-    public String getDescricao() { return descricao; }
-    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-    public LocalDate getPrazo() { return prazo; }
-    public void setPrazo(LocalDate prazo) { this.prazo = prazo; }
+    public String getDescricao() {
+        return descricao;
+    }
 
-    public boolean isConcluida() { return concluida; }
-    public void setConcluida(boolean concluida) { this.concluida = concluida; }
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public LocalDate getPrazo() {
+        return prazo;
+    }
+
+    public void setPrazo(LocalDate prazo) {
+        this.prazo = prazo;
+    }
+
+    public boolean isConcluida() {
+        return concluida;
+    }
+
+    public void setConcluida(boolean concluida) {
+        this.concluida = concluida;
+    }
 
     @Override
     public String toString() {
