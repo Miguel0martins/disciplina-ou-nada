@@ -17,7 +17,16 @@ Gerenciador de tarefas em Java com Spring Boot que cobra a disciplina de quem de
 ## Como rodar
 
     ./mvnw spring-boot:run
+## Rotas da API
 
+| Método | Rota | O que faz |
+|--------|------|-----------|
+| GET | /tarefas | Lista todas as tarefas |
+| GET | /tarefas/atrasadas | Lista só as tarefas atrasadas |
+| GET | /tarefas/cobranca | Mensagem de cobrança conforme as atrasadas |
+| POST | /tarefas | Cadastra uma tarefa (título, descrição e prazo) |
+| PUT | /tarefas/{indice}/concluir | Marca a tarefa como concluída |
+| DELETE | /tarefas/{indice} | Remove a tarefa |
 
 ## Status do projeto
 
